@@ -6,16 +6,28 @@ function Movies() {
       <h4>Recommended for You</h4>
       <Content>
         <Wrap>
-          <img src='/images/user-groot.jpg' alt='Recommended movie' />
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
         </Wrap>
         <Wrap>
-          <img src='/images/user-groot.jpg' alt='Recommended movie' />
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
         </Wrap>
         <Wrap>
-          <img src='/images/user-groot.jpg' alt='Recommended movie' />
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
         </Wrap>
         <Wrap>
-          <img src='/images/user-groot.jpg' alt='Recommended movie' />
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
+        </Wrap>
+        <Wrap>
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
+        </Wrap>
+        <Wrap>
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
+        </Wrap>
+        <Wrap>
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
+        </Wrap>
+        <Wrap>
+          <img src='/images/raya-placeholder.jpg' alt='Recommended movie' />
         </Wrap>
       </Content>
     </Container>

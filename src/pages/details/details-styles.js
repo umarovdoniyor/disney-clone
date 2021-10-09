@@ -23,7 +23,7 @@ export const Background = styled.div`
 `;
 
 export const ImageTitle = styled.div`
-  margin-top: 20px;
+  margin-top: 60px;
   height: 20vh;
   min-height: 170px;
   width: 25vw;
@@ -95,7 +95,7 @@ export const Subtitle = styled.p`
   margin-top: 26px;
 `;
 export const Description = styled.p`
-  width: 45%;
+  max-width: 45%;
   color: rgb(249, 249, 249);
   line-height: 1.4;
   font-size: 20px;
