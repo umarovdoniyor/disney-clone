@@ -1,3 +1,6 @@
+import { useParams } from 'react-router';
+import { useEffect, useState } from 'react';
+import db from '../../lib/firebase';
 import {
   Container,
   Background,
@@ -12,16 +15,34 @@ import {
 } from './details-styles';
 
 function Details() {
+  const [movie, setMovie] = useState();
+  const { id } = useParams();
+
+  useEffect(() => {
+    db.collection('movies')
+      .doc(id)
+      .get()
+      .then((doc) => {
+        console.log('doc', doc);
+        // if(doc.exists){
+        //   setMovie(doc.data());
+        // }
+        doc.exists ? setMovie(doc.data()) : console.log('No movie');
+      });
+  }, [id]);
+
   return (
     <Container>
       <Background>
-        <img src='/images/raya-bg.jpeg' alt='raya background ' />
+        {/* <img src='/images/raya-bg.jpeg' alt='raya background ' /> */}
+        <img src={movie?.Images[1]} alt='Background' />
       </Background>
       <ImageTitle>
-        <img
+        {/* <img
           src='/images/Raya_and_the_Last_Dragon_logo.png'
           alt='Raya_and_the_Last_Dragon_logo'
-        />
+        /> */}
+        <h1>{movie?.Title}</h1>
       </ImageTitle>
       <Controls>
         <Play>
@@ -39,12 +60,8 @@ function Details() {
           <img src='/images/group-icon.png' alt='group icon' />
         </GroupWatch>
       </Controls>
-      <Subtitle>2021 * 107m * Animation, Action, Adventure</Subtitle>
-      <Description>
-        In a realm known as Kumandra, a re-imagined Earth inhabited by an
-        ancient civilization, a warrior named Raya is determined to find the
-        last dragon.
-      </Description>
+      <Subtitle>{movie?.Genre}</Subtitle>
+      <Description>{movie?.Plot}</Description>
     </Container>
   );
 }
